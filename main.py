@@ -1,6 +1,6 @@
 from roll import rollDice as roll
-from clearFunc import clear
-#########################################################################################
+from clear import clear
+
 def main():
   while True:
     ans = input('''
@@ -17,8 +17,6 @@ ROLL or RL: Roll Dice
       break
     else:
       print('Invalid Input')
-#########################################################################################
-print('''
-Welcome to Dice Roll!
-''')
+
+print('Welcome to Dice Roll!')
 main()
