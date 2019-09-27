@@ -1,12 +1,12 @@
 def rollDice(diceInp):
   from random import randint
-  from re import split as regSplit
   if (diceInp.find('+') != -1): # if there is a modifier
     try:
-      diceNum=[]
-      diceNum = (regSplit(r'/([D+])/g', str(diceInp)))
-      print(regSplit(r'/([D+])/g', str(diceInp)))
-      print(diceNum)
+      diceNum = diceInp.split('D')
+      splitHolder=(diceNum[1].split('+'))
+      diceNum.remove(diceNum[1])
+      diceNum.append(splitHolder[0])
+      diceNum.append(splitHolder[1])
     except:
       print('Incorrect Syntax.\nThe correct syntax is xDy(+z)')
       return None
