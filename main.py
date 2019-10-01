@@ -18,5 +18,5 @@ ROLL or RL: Roll Dice
     else:
       print('Invalid Input')
 
-print('Welcome to Dice Roll!')
+print('\033[1m'+'\nWelcome to Dice Roll!'+'\033[0m')
 main()
