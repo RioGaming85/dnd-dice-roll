@@ -2,11 +2,9 @@ def rollDice(diceInp):
   from random import randint
   if (diceInp.find('+') != -1): # if there is a positive modifier
     try:
-      diceNum = diceInp.split('D')
-      splitHolder=(diceNum[1].split('+'))
-      diceNum.remove(diceNum[1])
-      diceNum.append(splitHolder[0])
-      diceNum.append(splitHolder[1])
+      from re import split as regSplit
+      diceNum = regSplit(r'[D+]',diceInp)
+
     except:
       print('Incorrect Syntax.\nThe correct syntax is xDy(modifier)')
       return None
@@ -22,11 +20,7 @@ def rollDice(diceInp):
 #######################################################################################
   elif (diceInp.find('-') != -1): # if there is a negative modifier
     try:
-      diceNum = diceInp.split('D')
-      splitHolder=(diceNum[1].split('-'))
-      diceNum.remove(diceNum[1])
-      diceNum.append(splitHolder[0])
-      diceNum.append(splitHolder[1])
+      diceNum = regSplit(r'[D+]',diceInp)
     except:
       print('Incorrect Syntax.\nThe correct syntax is xDy(modifier)')
       return None
