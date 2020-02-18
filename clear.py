@@ -1,6 +1,6 @@
 def clear():
   import os
-  try:
+  if os.name == 'posix':
     os.system('clear') # Linux clear
-  except:
+  else:
     os.system('cls') # Windows clear
