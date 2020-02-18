@@ -1,9 +1,9 @@
 def rollDice(diceInp):
+  from re import split as regSplit # re.split() has the same effect as the base python .split() but takes a regex
   from random import randint
   if (diceInp.find('+') != -1): # Check if there is a positive modifier
     try:
-      from re import split as regSplit # re.split() has the same effect as the base python .split() but takes a regex
-      diceNum = regSplit(r'[D+]',diceInp)
+            diceNum = regSplit(r'[D+]',diceInp)
 
     except:
       print('Incorrect Syntax.\nThe correct syntax is xDy(modifier)')
@@ -35,7 +35,7 @@ def rollDice(diceInp):
   
   else: # if there is no modifier
     try:
-      diceNum = diceNum.split('D')  
+      diceNum = regSplit(r'[D]',diceInp)  
     except:
       print('Incorrect Syntax.\nThe correct syntax is xDy(+z)')
       return None
